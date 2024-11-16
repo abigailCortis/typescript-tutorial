@@ -1,3 +1,3 @@
-const movieTitle: string = 'A New Hope';
-
-console.log(`Movie title: ${movieTitle}`)
+for(let i=1; i<=10; i++){
+    console.log(i);
+}
