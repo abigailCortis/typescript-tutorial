@@ -1,3 +1,3 @@
-let greeting: string = 'Hello World';
+const movieTitle: string = 'A New Hope';
 
-console.log(greeting);
+console.log(`Movie title: ${movieTitle}`)
