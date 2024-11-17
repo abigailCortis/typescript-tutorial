@@ -7,12 +7,12 @@ function GetReview(title: string): string | number {
 }
 const mod_3_demo_movieTitle: string = 'A New Hope';
 
-let mod_3_demo_movieReview: string | number = GetReview(movieTitle);
+let mod_3_demo_movieReview: string | number = GetReview(mod_3_demo_movieTitle);
 
-console.log(`Movie title: ${movieTitle}`);
+console.log(`Movie title: ${mod_3_demo_movieTitle}`);
 
-if (typeof(movieReview == 'string')) {
-    console.log(`Review: ${movieReview}`);
+if (typeof(mod_3_demo_movieReview == 'string')) {
+    console.log(`Review: ${mod_3_demo_movieReview}`);
 } else {
-    console.log(`Rating: ${movieReview}/10`)
+    console.log(`Rating: ${mod_3_demo_movieReview}/10`)
 }
