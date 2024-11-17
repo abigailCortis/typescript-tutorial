@@ -1,12 +1,18 @@
-let fruit: string = 'apple';
+function GetReview(title: string): string | number {
+    if (title == 'A New Hope') {
+        return 'An instant classic!';
+    } else {
+        return Math.floor(Math.random() * 10);
+    }
+}
+const movieTitle: string = 'A New Hope';
 
-switch (fruit) {
-    case 'orange':
-        console.log('You have selected an orange.');
-        break;
-    case 'apple':
-        console.log('You have selected an apple.');
-        break;
-    default:
-        console.log('You have selected a different fruit');
+let movieReview: string | number = GetReview(movieTitle);
+
+console.log(`Movie title: ${movieTitle}`);
+
+if (typeof(movieReview == 'string')) {
+    console.log(`Review: ${movieReview}`);
+} else {
+    console.log(`Rating: ${movieReview}/10`)
 }
