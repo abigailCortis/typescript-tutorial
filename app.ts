@@ -1,11 +1,12 @@
-let i: number = 1;
+let fruit: string = 'apple';
 
-while (i<= 10) {
-    if (i % 2 == 0) {
-        console.log(`${i} - even`);
-    } else {
-        console.log(`${i} - odd`);
-    }
-
-    i++;
+switch (fruit) {
+    case 'orange':
+        console.log('You have selected an orange.');
+        break;
+    case 'apple':
+        console.log('You have selected an apple.');
+        break;
+    default:
+        console.log('You have selected a different fruit');
 }
