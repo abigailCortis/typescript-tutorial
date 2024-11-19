@@ -1,4 +1,4 @@
-function GetReview(title: string): string | number {
+function GetReviewMod3(title: string): string | number {
     if (title == 'A New Hope') {
         return 'An instant classic!';
     } else {
@@ -7,7 +7,7 @@ function GetReview(title: string): string | number {
 }
 const mod_3_demo_movieTitle: string = 'A New Hope';
 
-let mod_3_demo_movieReview: string | number = GetReview(mod_3_demo_movieTitle);
+let mod_3_demo_movieReview: string | number = GetReviewMod3(mod_3_demo_movieTitle);
 
 console.log(`Movie title: ${mod_3_demo_movieTitle}`);
 
