@@ -1,3 +1,5 @@
+// @ts-nocheck
+
 let squareit = x => x * x; // 16
 
 let result = squareit(4);
