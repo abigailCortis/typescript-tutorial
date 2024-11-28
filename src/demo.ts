@@ -11,6 +11,20 @@ interface ReviewLogger {
   (review: string): void;
 }
 
+interface Person {
+    name: string;
+    email: string;
+}
+
+interface Director extends Person{
+  numMoviesDirected: number;
+}
+
+interface CastMember extends Person {
+    role: string;
+    rehearse: (sceneNumber: number) => void
+}
+
 function GetAllMovies(): Movie[] {
   return [
     { title: 'A New Hope', director: 'George Lucas', yearReleased: 1977, streaming: true },
