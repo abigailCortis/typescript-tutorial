@@ -25,6 +25,16 @@ interface CastMember extends Person {
     rehearse: (sceneNumber: number) => void
 }
 
+class Performer implements CastMember {
+  role: string = "";
+  name: string = "";
+  email: string = "";
+
+  rehearse(sceneNumber: number): void {
+    console.log(`${this.name} is rehearsing scebe number ${sceneNumber}.`);
+  }
+}
+
 function GetAllMovies(): Movie[] {
   return [
     { title: 'A New Hope', director: 'George Lucas', yearReleased: 1977, streaming: true },
@@ -86,12 +96,6 @@ let myMovie: Movie = {
   logReview: (review: string) => console.log(`Review: ${review}`)
 }
 
-// PrintMovieInfo(myMovie);
-
-// if(myMovie.logReview) {
-//     myMovie.logReview('A masterpiece');
-// }
-
-let printReview: ReviewLogger;
-printReview = (review: string) => console.log(`Viewer Review: ${review}`);
-printReview(`I want to see it again!`)
+let favoriteCastMember: CastMember = new Performer();
+favoriteCastMember.name = 'Daisy';
+favoriteCastMember.rehearse(25);
