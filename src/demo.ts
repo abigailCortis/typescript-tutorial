@@ -126,7 +126,17 @@ interface Movie {
     }
   }
   
-  let vid:Video = new Documentary('The History of Movies', 2024, 'film history');
-  vid.producer = 'Sci-Fi Pictures';
-  vid.printCredits();
+  let Musical = class extends Video {
+    printCredits(): void {
+      console.log(`Musical credits: ${this.producer}`);
+    }
+  }
+  
+  let myMusical = new Musical('Grease', 1978);
+  myMusical.producer = 'Sing-song Pictures';
+  myMusical.printCredits();
+  
+  class Course extends class { title: string = '';} {
+    subject: string = '';
+  }
   
