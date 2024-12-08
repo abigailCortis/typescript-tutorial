@@ -30,9 +30,9 @@ export function PrintMovieInfo(movie: Movie) {
     console.log(`Director: ${movie.director}`);
 }
 
-function GetTitles(director: string): string[];
-function GetTitles(director: string, streaming: boolean): string[];
-function GetTitles(director: string, streaming?: boolean): string[] {
+export function GetTitles(director: string): string[];
+export function GetTitles(director: string, streaming: boolean): string[];
+export function GetTitles(director: string, streaming?: boolean): string[] {
     const allMovies = GetAllMovies();
     const searchResults: string[] = [];
 
