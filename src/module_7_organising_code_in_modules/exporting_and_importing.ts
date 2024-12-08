@@ -1,3 +1,5 @@
+// @ts-nocheck
+
 // person.ts
 export interface Person { }
 
