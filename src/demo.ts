@@ -87,7 +87,7 @@ interface Movie {
     return searchResults;    
   }
   
-  class Video {
+  abstract class Video {
   private _producer: string = '';
   static medium: string = 'Audio/Visual';
   
@@ -107,6 +107,8 @@ interface Movie {
         console.log(`${this.title} was released in ${this.year}`);
         console.log(`Medium: ${Video.medium}`);
     }
+  
+    abstract printCredits(): void;
   }
   
   class Documentary extends Video {
@@ -118,8 +120,13 @@ interface Movie {
       super.printItem();
       console.log(`Subject: ${this.subject} (${this.year})`);
     }
+  
+    printCredits(): void {
+        console.log(`Producer: ${this.producer}`);
+    }
   }
   
-  let vid = new Documentary('The History of Movies', 2024, 'film history');
-  vid.printItem();
+  let vid:Video = new Documentary('The History of Movies', 2024, 'film history');
+  vid.producer = 'Sci-Fi Pictures';
+  vid.printCredits();
   
