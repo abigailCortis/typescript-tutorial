@@ -87,29 +87,39 @@ interface Movie {
     return searchResults;    
   }
   
-class Video {
+  class Video {
   private _producer: string = '';
   static medium: string = 'Audio/Visual';
-
+  
   get producer(): string {
     return this._producer.toUpperCase();
   }
-
+  
   set producer(newProducer: string) {
     this._producer = newProducer;
   }
-
-    constructor(public title: string, private year: number) {
+  
+    constructor(public title: string, protected year: number) {
         console.log('Creating a new Video ...');
     }
-
+  
     printItem(): void {
         console.log(`${this.title} was released in ${this.year}`);
         console.log(`Medium: ${Video.medium}`);
     }
-}
-
-let vid: Video = new Video('Return of the Jedi', 1983);
-vid.printItem();
-vid.producer = 'Sci-Fi Pictures';
-console.log(vid.producer);
+  }
+  
+  class Documentary extends Video {
+    constructor(newTitle: string, newYear: number, public subject: string) {
+      super(newTitle, newYear);
+    }
+  
+    printItem(): void {
+      super.printItem();
+      console.log(`Subject: ${this.subject} (${this.year})`);
+    }
+  }
+  
+  let vid = new Documentary('The History of Movies', 2024, 'film history');
+  vid.printItem();
+  

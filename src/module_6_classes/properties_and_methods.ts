@@ -1,6 +1,6 @@
 
 // @ts-nocheck
-class ReferenceItem {
+class ReferenceItem2 {
     numberOfPages: number;
 
     get editor(): string {
