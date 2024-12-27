@@ -1,4 +1,5 @@
 import { CastMember, Movie, FavoriteItem } from "./interfaces";
+import { logMethodInfo } from "./decorators";
 
 export class Performer implements CastMember {
     role: string = "";
@@ -39,6 +40,7 @@ export class Documentary extends Video {
         super(newTitle, newYear);
     }
 
+    @logMethodInfo
     printItem(): void {
         super.printItem();
         console.log(`Subject: ${this.subject} (${this.year})`);
