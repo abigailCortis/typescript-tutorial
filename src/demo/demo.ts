@@ -1,26 +1,8 @@
 import { Movie, Logger, CastMember as Actor } from './demo/interfaces';
 import { Performer, Documentary, Favorites } from './demo/classes';
 import * as Utility from './demo/functions';
+import * as _ from "lodash";
 
 let inventory: Array<Movie> = Utility.GetAllMovies();
 
-let favoriteMovies: Favorites<Movie> = new Favorites<Movie>();
-inventory.forEach(movie => favoriteMovies.add(movie));
-
-let firstFave: Movie = favoriteMovies.getFirst();
-
-let docs: Array<Documentary> = [
-    new Documentary('Baseball', 1994, 'History'),
-    new Documentary('In pursuit of Flavour', 2022, 'Wine'),
-    new Documentary('Gumbo', 2018, 'Food')
-];
-
-let favouriteDocs: Favorites<Documentary> = new Favorites<Documentary>();
-docs.forEach(doc => favouriteDocs.add(doc));
-
-let firstDoc: Documentary = favouriteDocs.getFirst();
-
-favouriteDocs.printTitles();
-
-let originalMovie = favoriteMovies.find('A New Hope');
-console.log(`${originalMovie.title} - ${originalMovie.yearReleased}`);
+inventory.forEach(movie => console.log(_.snakeCase(movie.title)));
