@@ -25,4 +25,8 @@ interface CastMember extends Person {
     rehearse: (sceneNumber: number) => void
 }
 
-export { Movie, ReviewLogger as Logger, Person, Director, CastMember };
+interface FavoriteItem {
+    title: string;
+}
+
+export { Movie, ReviewLogger as Logger, Person, Director, CastMember, FavoriteItem};

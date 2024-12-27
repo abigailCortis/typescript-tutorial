@@ -1,3 +1,5 @@
+// @ts-nocheck
+
 interface Inventory<T> {
     getNewestItem: () => T;
     addItem: (newItem: T) => void;

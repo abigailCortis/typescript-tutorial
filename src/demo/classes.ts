@@ -1,4 +1,4 @@
-import { CastMember } from "./interfaces";
+import { CastMember, Movie, FavoriteItem } from "./interfaces";
 
 export class Performer implements CastMember {
     role: string = "";
@@ -63,7 +63,7 @@ export class Course extends class { title: string = ''; } {
     subject: string = '';
 }
 
-export class Favorites<T> {
+export class Favorites<T extends FavoriteItem> {
     private _items: Array<T> = new Array<T>();
 
     add(item: T): void {
