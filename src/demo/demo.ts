@@ -18,13 +18,12 @@ function getMoviesByDirector(director: string): Promise<string[]> {
     return p;
 }
 
+async function logSearchResults(director: string) {
+    let foundMovies = await getMoviesByDirector(director);
+    console.log(foundMovies);
+}
+
 console.log('Beginning search ...');
-getMoviesByDirector('George Lucas')
-    .then(titles => {
-        console.log(`Found titles: ${titles}`);
-        throw 'something bad happened';
-        return titles.length;
-    }, reason => {return 0;})
-    .then(numOfMovies => console.log(`Number of movies found: ${numOfMovies}`))
-    .catch(reason => console.log(`Error: ${reason}`));
+logSearchResults('Wilson')
+    .catch(reason => console.log(reason))
 console.log('Search submitted ... ');
