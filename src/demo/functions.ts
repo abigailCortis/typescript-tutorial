@@ -23,6 +23,22 @@ function GetReview(title: string): string | number {
     }
 }
 
+function getMoviesByDirector(director: string): Promise<string[]> {
+    let p: Promise<string[]> = new Promise((resolve, reject) => {
+        setTimeout(() => {
+            let foundMovies: string[] = GetTitles(director);
+
+            if(foundMovies.length > 0) {
+                resolve(foundMovies);
+            } else {
+                reject('No movies found for that director.');
+            }
+        }, 2000);
+    });
+
+    return p;
+}
+
 export function PrintMovieInfo(movie: Movie) {
 
     console.log(`Title: ${movie.title}`);
@@ -50,4 +66,15 @@ export function GetTitles(director: string, streaming?: boolean): string[] {
         }
     }
     return searchResults;
+}
+
+export async function logSearchResults(director: string) {
+    let foundMovies = await getMoviesByDirector(director);
+    console.log(foundMovies);
+}
+
+export function Purge<T>(inventory: Array<T>): Array<T> {
+    // implement some fancy business logic 
+    // return the purged items
+    return inventory.splice(3, inventory.length);
 }
